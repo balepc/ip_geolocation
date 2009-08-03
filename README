@@ -1,0 +1,22 @@
+IpGeolocate
+===========
+
+Both interfaces could be used:
+
+http://www.hostip.info/
+http://ipinfodb.com/ip_location_api.php
+
+Setup
+=====
+
+Generate migration
+$ script/generate ip_geolocation IpGeolocation
+
+
+Example
+=======
+
+Example goes here.
+
+
+Copyright (c) 2009 [name of plugin creator], released under the MIT license

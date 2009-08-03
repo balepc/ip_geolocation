@@ -1,0 +1,18 @@
+class <%= migration_name %> < ActiveRecord::Migration
+  def self.up
+    create_table :ip_geolocations do |t|
+      t.string :ip_address, :null=>false
+      t.string :city
+      t.string :country
+      t.string :latitude
+      t.string :longitude
+      t.timestamps
+    end
+
+    add_index :ip_geolocations, :ip_address
+  end
+
+  def self.down
+    drop_table :ip_geolocations
+  end
+end
