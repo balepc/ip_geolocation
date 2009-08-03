@@ -1,10 +1,15 @@
 IpGeolocate
 ===========
 
-Both interfaces could be used:
+Plugin for detecting user's geo information by ip address.
+
+All records are stored in database.
+
+Both sources could be used, by switching IpGeolocation::HOSTIP_DEFINED
 
 http://www.hostip.info/
-http://ipinfodb.com/ip_location_api.php
+http://ipinfodb.com/ip_location_api.php/
+
 
 Setup
 =====
@@ -16,7 +21,23 @@ $ script/generate ip_geolocation IpGeolocation
 Example
 =======
 
-Example goes here.
+>> IpGeolocation
+=> IpGeolocation(id: integer, ip_address: string, city: string, country: string, latitude: string, longitude: string, created_at: 
+datetime, updated_at: datetime)
+
+# In model
+>> IpGeolocation.get('10.0.0.256')
+
+# In controllers
+>> geo = IpGeolocation.get(request.remote_ip)
+>> geo.city
+=> 'Riga'
+>> geo.country
+=> 'Latvia'
+>> geo.latitude 
+=> '102.21'
+>> geo.longitude
+=> '555'
 
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Copyright (c) 2009 Valery Vishnyakov, released under the MIT license
